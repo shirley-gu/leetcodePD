@@ -8,7 +8,6 @@ package main
 import "fmt"
 
 func twoSum2(nums map[int]int, target int) []int {
-
 	for k1, v1 := range nums {
 		for k2, v2 := range nums {
 			//fmt.Println("k1=", k1)
