@@ -11,8 +11,46 @@ C             100
 D             500
 M             1000
 */
-package pd
+
+/*
+规律：
+II=2=1+1
+XII=
+*/
+package main
+
+import "fmt"
 
 func romanToInt(s string) int {
+	result:=0
+	num:=0
+	for i:=0; i<len(s); i++ {
+		switch s[i] {
+			case 'I':
+				num = 1
+			case 'V':
+				num = 5
+			case 'X':
+				num = 10
+			case 'L':
+				num = 50
+			case 'C':
+				num = 100
+			case 'D':
+				num = 500
+			case 'M':
+				num = 1000
+		}
+		if s[i]=='I'&& (s[i+1]=='V'||s[i+1]=='X') ||s[i]=='X'&& (s[i+1]=='L'||s[i+1]=='C')||s[i]=='C'&& (s[i+1]=='D'||s[i+1]=='M'){
+			num=num*(-1)
+		}
+		result= result + num
+	}
+	return result
+}
 
+func main(){
+	var sum string = "MCMXCIV"
+	a:=romanToInt(sum)
+	fmt.Println(a)
 }
