@@ -17,9 +17,9 @@ M             1000
 II=2=1+1
 XII=
 */
-package main
 
-import "fmt"
+//violence解法
+package main
 
 func romanToInt(s string) int {
 	result:=0
@@ -49,8 +49,4 @@ func romanToInt(s string) int {
 	return result
 }
 
-func main(){
-	var sum string = "MCMXCIV"
-	a:=romanToInt(sum)
-	fmt.Println(a)
-}
+
